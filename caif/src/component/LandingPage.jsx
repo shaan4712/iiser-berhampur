@@ -1,5 +1,6 @@
 import React from "react";
 import FAQ from "../pages/FAQ";
+import InstrumentsSection from "./InstrumentsSection";
 
 function LandingPage() {
   return (
@@ -29,31 +30,7 @@ function LandingPage() {
         integrity, fairness, dignity and professionalism to provide equal
         opportunities for all.
       </p>
-      <p>
-        <strong>Vision</strong>
-        <br />
-        The vision of IISER Berhampur encompasses creation of research
-        institute/centres of the highest caliber in which teaching and education
-        in basic sciences will be totally integrated with state-of-the-art
-        research. IISERs are devoted to under-graduate and post-graduate
-        teaching in sciences in an intellectually vibrant atmosphere of research
-        and make education and career in basic sciences more attractive by
-        providing opportunities in integrative teaching and learning of
-        sciences.
-      </p>{" "}
-      <p>
-        <strong>Mission</strong>
-        <br />
-        To create quality education and research in basic sciences. To attract
-        and nurture high-quality academic faculty. To create integrated Masters
-        Programme in sciences, in order to provide entry into research at a
-        younger age. In addition, the Institutes will have integrated programmes
-        leading to Masters and Ph.Ds to those who hold a Bachelor’s degree in
-        science. To make possible a flexible borderless curriculum in sciences.
-        To actively forge strong relationship with existing universities and
-        colleges and network with laboratories and institutions. To establish
-        advanced Research Laboratories and Central facilities.
-      </p>
+      <InstrumentsSection />
       <section id="faqSection">
         <FAQ />
       </section>

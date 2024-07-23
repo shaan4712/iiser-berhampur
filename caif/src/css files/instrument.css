@@ -1,0 +1,45 @@
+.accordion-button {
+  color: #fff; /* Text color for the button */
+  background-color: rgba(
+    40,
+    167,
+    69,
+    0.7
+  ); /* Semi-transparent green for the button */
+  border-color: rgba(
+    40,
+    167,
+    69,
+    0.7
+  ); /* Semi-transparent green border for the button */
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff; /* Text color when the button is expanded */
+  background-color: rgba(
+    30,
+    139,
+    58,
+    0.7
+  ); /* Even more transparent green when expanded */
+  border-color: rgba(
+    30,
+    139,
+    58,
+    0.7
+  ); /* Even more transparent green border when expanded */
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); /* Focus shadow with slight transparency */
+}
+
+.accordion-body {
+  background-color: rgba(
+    240,
+    248,
+    240,
+    0.8
+  ); /* Semi-transparent light green background for the body */
+  border: 1px solid rgba(200, 230, 201, 0.8); /* Semi-transparent light green border for the body */
+}
