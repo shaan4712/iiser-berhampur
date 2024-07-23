@@ -1,9 +1,13 @@
 import React from "react";
+import FAQ from "../pages/FAQ";
 
 function LandingPage() {
   return (
     <div className="container">
-      <p>Uttery Buttery Delicious</p>
+      <p>Utterly Buttery Delicious</p>
+      <section id="faqSection">
+        <FAQ />
+      </section>
     </div>
   );
 }

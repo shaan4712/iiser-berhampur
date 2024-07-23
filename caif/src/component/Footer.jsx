@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-light text-center py-3">
+    <footer className="bg-light text-center py-3 sticky-bottom">
       <p className="mb-0">
         Copyright &copy; CAIF-IISER-BAM | All Rights Reserved |&nbsp;
         <a
