@@ -4,7 +4,7 @@
 
 ![Screenshot (36)](https://github.com/user-attachments/assets/a03aac73-d10a-4dc6-b7d8-bef7311575c3)
 
-The project is being build using Vite + ReactJS.
+The project is being built using Vite + ReactJS.
 
 ## To run the project on the local-system:
 
