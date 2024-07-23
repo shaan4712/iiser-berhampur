@@ -1,14 +1,15 @@
 import React from "react";
+import "../css files/faq.css";
 
 function FAQ() {
   return (
     <div className="container my-5">
       <h1>FAQs</h1>
-      <div className="accordion" id="faqAccordion">
+      <div className="accordion faq-accordion" id="faqAccordion">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
             <button
-              className="accordion-button"
+              className="accordion-button faq-button"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -33,7 +34,7 @@ function FAQ() {
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingTwo">
             <button
-              className="accordion-button collapsed"
+              className="accordion-button faq-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
@@ -58,7 +59,7 @@ function FAQ() {
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingThree">
             <button
-              className="accordion-button collapsed"
+              className="accordion-button faq-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
