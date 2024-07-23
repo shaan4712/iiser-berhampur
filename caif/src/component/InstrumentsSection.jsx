@@ -9,7 +9,7 @@ const instruments = [
     id: 1,
     name: "Telescope",
     image: telescope,
-    description: "A powerful telescope for astronomical observations.",
+    description: "A powerful telescopehjeeqwkje for astronomical observations.",
   },
   {
     id: 2,
