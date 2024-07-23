@@ -4,7 +4,12 @@ function LandingNavbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand d-flex align-items-center" href="/">
+          <img
+            src="../favicon.ico"
+            alt="Logo"
+            style={{ height: "30px", marginRight: "10px" }}
+          />
           CAIF-IISER BAM
         </a>
         <button
