@@ -11,7 +11,7 @@ function LandingNavbar() {
             alt="Logo"
             style={{ height: "30px", marginRight: "10px" }}
           />
-          CAIF-IISER BAM
+          CAIF DEPT - IISER BERHAMPUR
         </a>
         <button
           className="navbar-toggler"
