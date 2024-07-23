@@ -4,6 +4,7 @@ import LandingNavbar from "./component/LandingNavbar";
 import LandingPage from "./component/LandingPage";
 import Footer from "./component/Footer";
 import FAQ from "./pages/FAQ";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
         <Footer />

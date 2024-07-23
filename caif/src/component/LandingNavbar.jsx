@@ -32,7 +32,9 @@ function LandingNavbar() {
             </li>
             <li>
               <button className="btn btn-outline-success" type="submit">
+              <a href="/login" className="text-decoration-none">
                 Login
+                </a>
               </button>
             </li>
           </ul>
