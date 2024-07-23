@@ -1,5 +1,6 @@
-import React from 'react';
-import '../css files/ForgotPwd.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css files/ForgotPwd.css";
 
 const ForgotPassword = () => {
   return (
@@ -8,20 +9,38 @@ const ForgotPassword = () => {
         <h1 className="text-white mb-4">Forgot Password</h1>
         <form>
           <div className="form-group">
-            <input type="email" className="form-control mb-3" placeholder="Recovery Email Address" required />
+            <input
+              type="email"
+              className="form-control mb-3"
+              placeholder="Recovery Email Address"
+              required
+            />
           </div>
           <div className="form-group">
-            <input type="tel" className="form-control mb-3" placeholder="Phone Number" required />
+            <input
+              type="tel"
+              className="form-control mb-3"
+              placeholder="Phone Number"
+              required
+            />
           </div>
           <div className="form-group">
-            <input type="number" className="form-control mb-3" placeholder="Enter OTP" required />
+            <input
+              type="number"
+              className="form-control mb-3"
+              placeholder="Enter OTP"
+              required
+            />
           </div>
-          <button type="submit" className="btn btn-success btn-block mb-3">
-            <a href="/resetpwd" className="text-decoration-none">
-            Submit
-            </a>
-            </button>
         </form>
+        <Link to="/resetpwd" className="text-decoration-none">
+          <button
+            type="button"
+            className="btn btn-signup btn-outline-light btn-block"
+          >
+            Submit
+          </button>
+        </Link>
       </div>
     </div>
   );

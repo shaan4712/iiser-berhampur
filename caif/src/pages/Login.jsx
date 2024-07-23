@@ -1,6 +1,6 @@
-import React from 'react';
-
-import '../css files/Login.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css files/Login.css";
 
 const Login = () => {
   return (
@@ -9,23 +9,43 @@ const Login = () => {
         <h1 className="text-white mb-4">Login</h1>
         <form>
           <div className="form-group">
-            <input type="email" className="form-control mb-3" placeholder="Email" required />
+            <input
+              type="email"
+              className="form-control mb-3"
+              placeholder="Email"
+              required
+            />
           </div>
           <div className="form-group">
-            <input type="password" className="form-control mb-3" placeholder="Password" required />
+            <input
+              type="password"
+              className="form-control mb-3"
+              placeholder="Password"
+              required
+            />
           </div>
-          <button type="button" className="btn btn-forgot btn-outline-light btn-block mb-3">
-            <a href="/forgotpwd" className="text-decoration-none">
-            Forgot Password
-            </a>
-            </button>
-          <button type="submit" className="btn btn-success btn-block mb-3">Log in</button>
-          <button type="button" className="btn btn-signup btn-outline-light btn-block">
-            <a href="/signup" className="text-decoration-none">
-            Sign up
-            </a>
-            </button>
         </form>
+        <button type="submit" className="btn btn-success btn-block mb-3">
+          Log in
+        </button>
+        <br />
+        <button
+          type="button"
+          className="btn btn-forgot btn-outline-light btn-block mb-3"
+        >
+          <Link to="/forgotpwd" className="text-decoration-none text-black-50">
+            Forgot Password
+          </Link>
+        </button>
+        <br />
+        <Link to="/signup" className="text-decoration-none">
+          <button
+            type="button"
+            className="btn btn-signup btn-outline-light btn-block"
+          >
+            Sign up
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -6,10 +6,10 @@ function Footer() {
       <p className="mb-0">
         Copyright &copy; CAIF-IISER-BAM | All Rights Reserved |&nbsp;
         <a
-          className="text-decoration-none"
+          className="text-decoration-none text-dark"
           href="mailto:http://mail.iiserbpr.ac.in"
         >
-          http://mail.iiserbpr.ac.in
+          Reach us Out
         </a>
       </p>
     </footer>
