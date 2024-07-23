@@ -14,9 +14,17 @@ const Login = () => {
           <div className="form-group">
             <input type="password" className="form-control mb-3" placeholder="Password" required />
           </div>
+          <button type="button" className="btn btn-forgot btn-outline-light btn-block mb-3">
+            <a href="/forgotpwd" className="text-decoration-none">
+            Forgot Password
+            </a>
+            </button>
           <button type="submit" className="btn btn-success btn-block mb-3">Log in</button>
-          <button type="button" className="btn btn-outline-light btn-block mb-3">Forgot Password</button>
-          <button type="button" className="btn btn-outline-light btn-block">Sign up</button>
+          <button type="button" className="btn btn-signup btn-outline-light btn-block">
+            <a href="/signup" className="text-decoration-none">
+            Sign up
+            </a>
+            </button>
         </form>
       </div>
     </div>

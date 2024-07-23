@@ -5,6 +5,9 @@ import LandingPage from "./component/LandingPage";
 import Footer from "./component/Footer";
 import FAQ from "./pages/FAQ";
 import Login from "./pages/Login";
+import ForgotPassword from "./pages/Forgotpwd";
+import SignUp from "./pages/Signup";
+import ResetPassword from "./pages/Resetpwd";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgotpwd" element={<ForgotPassword />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/resetpwd" element={<ResetPassword />} />
           </Routes>
         </div>
         <Footer />

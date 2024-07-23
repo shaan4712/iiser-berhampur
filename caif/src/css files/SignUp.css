@@ -2,7 +2,7 @@ body {
     background-color: #e0f7e9;
   }
   
-  .login-container {
+  .sign-up-container {
     background-color: rgba(40, 167, 69, 0.7);
     padding: 20px;
     border-radius: 10px;
@@ -11,39 +11,33 @@ body {
     text-align: center;
   }
   
-  .login-container h1 {
+  .sign-up-container h1 {
     color: white;
     margin-bottom: 20px;
   }
   
-  .login-container .form-control {
+  .sign-up-container .form-control {
     background-color: rgba(240, 248, 240, 0.8);
     border: 1px solid rgba(200, 230, 201, 0.8);
     border-radius: 5px;
   }
   
-  .login-container .btn-success {
+  .sign-up-container .name-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .sign-up-container .name-row .form-control {
+    width: calc(50% - 5px);
+  }
+  
+  .sign-up-container .btn-success {
     background-color: rgba(30, 139, 58, 0.7);
     border: none;
     font-size: 16px;
   }
   
-  .login-container .btn-success:hover {
+  .sign-up-container .btn-success:hover {
     background-color: rgba(30, 139, 58, 1);
   }
-  
-  .login-container .btn-outline-light {
-    border: none;
-    color: white;
-    font-size: 16px;
-  }
-
-  .btn-forgot{
-    margin-right: 5px;
-  }
-  
-  .login-container .btn-outline-light:hover {
-    color: rgba(30, 139, 58, 1);
-  }
-  
   
