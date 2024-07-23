@@ -1,5 +1,6 @@
-import React from 'react';
-import '../css files/ResetPwd.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../css files/ResetPwd.css";
 
 const ResetPassword = () => {
   return (
@@ -8,16 +9,29 @@ const ResetPassword = () => {
         <h1 className="text-white mb-4">Reset Password</h1>
         <form>
           <div className="form-group">
-            <input type="password" className="form-control mb-3" placeholder="New Password" required />
+            <input
+              type="password"
+              className="form-control mb-3"
+              placeholder="New Password"
+              required
+            />
           </div>
           <div className="form-group">
-            <input type="password" className="form-control mb-3" placeholder="Re-enter New Password" required />
+            <input
+              type="password"
+              className="form-control mb-3"
+              placeholder="Re-enter New Password"
+              required
+            />
           </div>
-          <button type="submit" className="btn btn-success btn-block mb-3">
-            <a href="/login" className="text-decoration-none">
-            Reset Password
-            </a>
+          <Link to="/login" className="text-decoration-none">
+            <button
+              type="button"
+              className="btn btn-signup btn-outline-light btn-block"
+            >
+              Reset Password
             </button>
+          </Link>
         </form>
       </div>
     </div>

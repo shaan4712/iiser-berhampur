@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function LandingNavbar() {
   return (
@@ -31,11 +32,11 @@ function LandingNavbar() {
               </a>
             </li>
             <li>
-              <button className="btn btn-outline-success" type="submit">
-                <a href="/login" className="text-decoration-none">
-                Login
-                </a>
-              </button>
+              <Link to="/login" className="text-decoration-none">
+                <button type="submit" className="btn btn-success btn-block">
+                  Login
+                </button>
+              </Link>
             </li>
           </ul>
         </div>
