@@ -26,7 +26,9 @@ const Login = () => {
           </div>
         </form>
         <button type="submit" className="btn btn-success btn-block mb-3">
-          Log in
+        <Link to="/PostLogin" className="text-decoration-none text-black-50">
+            Log in
+          </Link>
         </button>
         <br />
         <button
