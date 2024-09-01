@@ -22,4 +22,8 @@ The project is being built using Vite + ReactJS.
    ```sh
    npm run dev
    ```
-6. The project will run on http://localhost:5173/ (by default)
+6. Run the server in parallel with the frontend by navigating to the directory: `server`
+   ```sh
+   node index.js
+   ```
+7. The client side run on http://localhost:5173/ (by default) and the server on http://localhost:5000/ 
