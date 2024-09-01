@@ -9,12 +9,12 @@ import ForgotPassword from "./pages/Forgotpwd";
 import SignUp from "./pages/Signup";
 import ResetPassword from "./pages/Resetpwd";
 
-import Navbar from './component/Navbar'; // Import Navbar
-import FAQ1 from './component/FAQ1';
-import ViewLab from './component/ViewLab';
-import PastTestRecordings from './component/PastTestRecordings';
-import NewReservations from './component/NewReservations';
-import PostLogin from './pages/PostLogin';
+import Navbar from "./component/Navbar"; // Import Navbar
+import FAQ1 from "./component/FAQ1";
+import ViewLab from "./component/ViewLab";
+import PastTestRecordings from "./component/PastTestRecordings";
+import NewReservations from "./component/NewReservations";
+import PostLogin from "./pages/PostLogin";
 
 function App() {
   return (
@@ -31,7 +31,10 @@ function App() {
             <Route path="/resetpwd" element={<ResetPassword />} />
 
             <Route path="/view-lab" element={<ViewLab />} />
-            <Route path="/past-test-recordings" element={<PastTestRecordings />} />
+            <Route
+              path="/past-test-recordings"
+              element={<PastTestRecordings />}
+            />
             <Route path="/new-reservations" element={<NewReservations />} />
             <Route path="/faq1" element={<FAQ1 />} />
             <Route path="/PostLogin" element={<PostLogin />} />
