@@ -1,61 +1,51 @@
-import React, { useState } from 'react';
-import '../css files/ViewLab.css'; // Separate CSS file for ViewLab
+import React, { useState } from "react";
+import "../css files/ViewLab.css"; // Separate CSS file for ViewLab
+import instruments from "../data/instrumentData"; // Import the instruments data
 
 const ViewLab = () => {
-  const [activeCard, setActiveCard] = useState(null);
-  const [blurBackground, setBlurBackground] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const instruments = [
-    { id: 1, name: 'Instrument 1', description: 'Brief description of Instrument 1', image: 'image1.jpg', longDescription: 'Long description of Instrument 1' },
-    { id: 2, name: 'Instrument 2', description: 'Brief description of Instrument 2', image: 'image2.jpg', longDescription: 'Long description of Instrument 2' },
-    { id: 3, name: 'Instrument 3', description: 'Brief description of Instrument 3', image: 'image3.jpg', longDescription: 'Long description of Instrument 3' },
-    // Add more instruments as needed
-  ];
-
-  const handleCardClick = (instrument) => {
-    setActiveCard(instrument);
-    setBlurBackground(true);
-  };
-
-  const closePopup = () => {
-    setActiveCard(null);
-    setBlurBackground(false);
-  };
+  const filteredInstruments = instruments.filter((instrument) =>
+    instrument.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-    <div className={`view-lab ${blurBackground ? 'blur-background' : ''}`}>
-      <div className="search-category">
-        <button className="search-btn">Search</button>
-        <div className="dropdown">
-          <button className="category-btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Category
-          </button>
-          <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="#">Category 1</a></li>
-            <li><a className="dropdown-item" href="#">Category 2</a></li>
-            <li><a className="dropdown-item" href="#">Category 3</a></li>
-          </ul>
-        </div>
+    <div className="view-lab container">
+      <div className="search-bar m-5 p-5">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search Instruments..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
-      <div className="instrument-list">
-        {instruments.map((instrument) => (
-          <div key={instrument.id} className="instrument-card" onClick={() => handleCardClick(instrument)}>
-            <img src={instrument.image} alt={instrument.name} />
-            <h3>{instrument.name}</h3>
-            <p>{instrument.description}</p>
+
+      <div className="instrument-list row mt-4">
+        {filteredInstruments.map((instrument) => (
+          <div key={instrument.id} className="col-lg-4 col-md-6 mb-4">
+            <div className="card h-100">
+              <img
+                src={instrument.image}
+                className="card-img-top"
+                alt={instrument.name}
+              />
+              <div className="card-body">
+                <div className="d-flex justify-content-between align-items-center">
+                  <h5 className="card-title mb-0">{instrument.name}</h5>
+                  <button className="btn btn-primary">
+                    <i className="fas fa-plus"></i>
+                    <span className="ml-2">
+                      <strong>+</strong>
+                    </span>
+                  </button>
+                </div>
+                <p className="card-text mt-2">{instrument.description}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
-      {activeCard && (
-        <div className="popup" onClick={closePopup}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <img src={activeCard.image} alt={activeCard.name} />
-            <h2>{activeCard.name}</h2>
-            <p>{activeCard.longDescription}</p>
-            <button className="close-btn" onClick={closePopup}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -1,10 +1,10 @@
-import React from 'react';
-import '../css files/PastTestRecordings.css'; // Separate CSS file for PastTestRecordings
+import React from "react";
+import "../css files/PastTestRecordings.css";
 
 const PastTestRecordings = () => {
   return (
-    <div className="past-test-recordings">
-      <h1>Past Test Recordings</h1>
+    <div className="past-test-recordings mt-5">
+      <h1>Your Records</h1>
       <table className="recordings-table">
         <thead>
           <tr>

@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/Forgotpwd";
 import SignUp from "./pages/Signup";
 import ResetPassword from "./pages/Resetpwd";
-
 import Navbar from "./component/Navbar"; // Import Navbar
 import FAQ1 from "./component/FAQ1";
 import ViewLab from "./component/ViewLab";
@@ -29,18 +28,11 @@ function App() {
             <Route path="/forgotpwd" element={<ForgotPassword />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/resetpwd" element={<ResetPassword />} />
-
-            <Route path="/view-lab" element={<ViewLab />} />
-            <Route
-              path="/past-test-recordings"
-              element={<PastTestRecordings />}
-            />
-            <Route path="/new-reservations" element={<NewReservations />} />
+            <Route path="/records" element={<PastTestRecordings />} />
             <Route path="/faq1" element={<FAQ1 />} />
-            <Route path="/PostLogin" element={<PostLogin />} />
+            <Route path="/viewlab" element={<PostLogin />} />
           </Routes>
         </div>
-        <Footer />
       </div>
     </Router>
   );
