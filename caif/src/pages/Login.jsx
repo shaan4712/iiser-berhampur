@@ -15,7 +15,7 @@ const Login = () => {
         email,
         password,
       });
-      navigate("/PostLogin");
+      navigate("/view-lab");
     } catch (error) {
       console.error("Login failed", error);
     }
