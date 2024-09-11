@@ -1,12 +1,16 @@
 import React from "react";
 import FAQ from "../pages/FAQ";
 import InstrumentsSection from "./InstrumentsSection";
+import LandingNavbar from "./LandingNavbar";
+import Footer from "./Footer";
 
 function LandingPage() {
   return (
+    <div>
+      <LandingNavbar />
     <div className="container mt-5">
       <br></br>
-      <br></br>
+      <br></br><br></br>
       <p>
         The Indian Institute of Science Education and Research Berhampur,
         established in 2016 by the Ministry of Education, Government of India is
@@ -36,6 +40,7 @@ function LandingPage() {
       <section id="faqSection">
         <FAQ />
       </section>
+    </div>
     </div>
   );
 }

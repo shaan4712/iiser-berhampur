@@ -57,7 +57,7 @@ const instruments = [
     id: 10,
     name: "Electrophoresis Unit",
     description: "Separates DNA",
-    image: "../electrophoresis.jpg",
+    image: "../electrophoresis.webp",
   },
   {
     id: 11,

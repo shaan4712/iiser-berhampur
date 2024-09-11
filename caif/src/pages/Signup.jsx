@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css files/SignUp.css";
+import LandingNavbar from "../component/LandingNavbar";
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -30,6 +31,8 @@ const SignUp = () => {
   };
 
   return (
+    <div>
+      <LandingNavbar />
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="sign-up-container">
         <h1 className="text-white mb-4">Sign Up</h1>
@@ -102,6 +105,7 @@ const SignUp = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

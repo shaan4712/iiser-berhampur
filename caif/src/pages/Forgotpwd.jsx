@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css files/ForgotPwd.css";
+import LandingNavbar from "../component/LandingNavbar";
 
 const ForgotPassword = () => {
   return (
+    <div>
+      <LandingNavbar />
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="forgot-password-container">
         <h1 className="text-white mb-4">Forgot Password</h1>
@@ -42,6 +45,7 @@ const ForgotPassword = () => {
           </button>
         </Link>
       </div>
+    </div>
     </div>
   );
 };

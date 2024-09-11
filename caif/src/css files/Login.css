@@ -40,8 +40,12 @@ body {
 
 .btn-forgot {
   margin-right: 5px;
+  margin-top: 16px;
 }
 
 .login-container .btn-outline-light:hover {
   color: rgba(30, 139, 58, 1);
 }
+
+
+

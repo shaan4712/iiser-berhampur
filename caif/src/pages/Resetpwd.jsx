@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css files/ResetPwd.css";
+import LandingNavbar from "../component/LandingNavbar";
 
 const ResetPassword = () => {
   return (
+    <div>
+      <LandingNavbar />
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="reset-password-container">
         <h1 className="text-white mb-4">Reset Password</h1>
@@ -34,6 +37,7 @@ const ResetPassword = () => {
           </Link>
         </form>
       </div>
+    </div>
     </div>
   );
 };

@@ -10,16 +10,16 @@ import SignUp from "./pages/Signup";
 import ResetPassword from "./pages/Resetpwd";
 import Navbar from "./component/Navbar"; // Import Navbar
 import FAQ1 from "./component/FAQ1";
-import ViewLab from "./component/ViewLab";
+// import ViewLab from "./component/ViewLab";
 import PastTestRecordings from "./component/PastTestRecordings";
 import NewReservations from "./component/NewReservations";
 import PostLogin from "./pages/PostLogin";
+import ViewLab from "./pages/PostLogin";
 
 function App() {
   return (
     <Router>
       <div>
-        <LandingNavbar />
         <div className="container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -30,9 +30,10 @@ function App() {
             <Route path="/resetpwd" element={<ResetPassword />} />
             <Route path="/records" element={<PastTestRecordings />} />
             <Route path="/faq1" element={<FAQ1 />} />
-            <Route path="/viewlab" element={<PostLogin />} />
+            <Route path="/viewlab" element={<ViewLab />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </Router>
   );

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css files/Login.css";
+import LandingNavbar from "../component/LandingNavbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +23,8 @@ const Login = () => {
   };
 
   return (
+    <div>
+      <LandingNavbar />
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="login-container">
         <h1 className="text-white mb-4">Login</h1>
@@ -61,6 +64,7 @@ const Login = () => {
           </button>
         </a>
       </div>
+    </div>
     </div>
   );
 };

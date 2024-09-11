@@ -6,7 +6,7 @@ import "../css files/Navbar.css"; // Separate CSS file for Navbar
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen); 
 
   return (
     <div className="navbar">
