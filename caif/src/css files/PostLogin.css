@@ -113,7 +113,7 @@ h1 {
   background-color: transparent;
   color: #4caf50;
   border: 1px solid #4caf50;
-  padding: 6px 16px;
+  padding: 6px 20px;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -183,6 +183,7 @@ h1 {
 .dialog-buttons button[type="submit"] {
   background-color: #4caf50;
   color: white;
+  padding: 8px 27px;
 }
 
 .dialog-buttons button[type="button"] {

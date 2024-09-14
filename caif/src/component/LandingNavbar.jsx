@@ -28,7 +28,7 @@ function LandingNavbar() {
             <li className="nav-item mx-3">
               <a className="nav-link px-4 py-2 hover:bg-success" aria-current="page" href="#faqSection">
                 FAQs
-              </a>
+              </a> 
             </li>
             <li>
               <Link to="/login" className="text-decoration-none">

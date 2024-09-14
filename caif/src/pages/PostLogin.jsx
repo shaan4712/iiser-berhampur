@@ -124,10 +124,10 @@ const ViewLab = () => {
                     required
                   />
                   <div className="dialog-buttons">
-                    <button type="submit">Add</button>
                     <button type="button" onClick={() => setShowDialog(false)}>
                       Cancel
                     </button>
+                    <button type="submit">Add</button>
                   </div>
                 </form>
               </div>

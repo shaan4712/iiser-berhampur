@@ -21,7 +21,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/faq" element={<FAQ />} />
+            {/* <Route path="/faq" element={<FAQ />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/forgotpwd" element={<ForgotPassword />} />
             <Route path="/signup" element={<SignUp />} />
