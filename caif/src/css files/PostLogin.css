@@ -1,5 +1,4 @@
-
-.view-lab-container {
+.view-lab-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -7,35 +6,42 @@
 
 .content-wrapper {
   display: flex;
-  flex: 1;
+  flex-grow: 1;
 }
 
-.main-content {
-  flex: 1;
+.view-lab-container {
+  flex-grow: 1;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #DFF6E8;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  color: #2e7d32;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .search-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 30px 0;
-  margin-top: 120px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 25px;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
 }
 
 .search-icon {
-  color: #28a745;
+  color: #757575;
   margin-right: 10px;
 }
 
@@ -46,77 +52,142 @@
   font-size: 16px;
 }
 
-.instrument-list {
+.instrument-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .instrument-card {
   width: calc(33.333% - 20px);
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .instrument-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.card-img-wrapper {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f9fa;
-}
-
-.card-img-wrapper img {
-  max-height: 100%;
-  max-width: 100%;
+.card-img-top {
+  width: 100%;
+  height: 180px;
   object-fit: contain;
+  background-color: #ffffff;
+  padding: 20px;
 }
 
 .card-body {
   padding: 15px;
+  background-color: #f8f8f8; /* Light gray background */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the right */
 }
 
 .card-title {
-  color: #28a745;
-  font-weight: 600;
-  margin-bottom: 10px;
+  color: #2e7d32;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  align-self: flex-start; /* Align title to the left */
+  width: 100%; /* Ensure full width */
 }
 
 .card-text {
-  color: #6c757d;
-  font-size: 14px;
+  color: #616161;
   margin-bottom: 15px;
+  font-size: 14px;
+  align-self: flex-start; /* Align description to the left */
+  width: 100%; /* Ensure full width */
 }
 
-.card-footer {
+.btn-add {
+  background-color: transparent;
+  color: #4caf50;
+  border: 1px solid #4caf50;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: auto;
+  display: inline-block;
+  align-self: flex-end; /* Align button to the right */
+}
+
+.btn-add:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.dialog h3 {
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.dialog form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.dialog-buttons {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-  border-top: 1px solid #e9ecef;
+  margin-top: 15px;
 }
 
-.btn-outline-success {
-  color: #28a745;
-  border-color: #28a745;
-  padding: 5px 15px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+.dialog-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.btn-outline-success:hover {
-  background-color: #28a745;
-  color: #ffffff;
+.dialog-buttons button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.dialog-buttons button[type="button"] {
+  background-color: #f44336;
+  color: white;
 }
 
 @media (max-width: 992px) {

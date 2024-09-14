@@ -1,0 +1,75 @@
+.records-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .records-container {
+    flex: 1;
+    padding: 110px;
+    background-color: #DFF6E8;
+    overflow-y: auto;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-icon {
+    color: #4caf50;
+    margin-right: 10px;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+  }
+  
+  .records-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+  
+  .records-table th,
+  .records-table td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .records-table th {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .records-table th:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  .records-table th:last-child {
+    border-top-right-radius: 10px;
+  }
+  
+  .records-table tr {
+    background-color: white;
+    box-shadow: 0
+  }

@@ -1,13 +1,101 @@
-import React from 'react';
-import '../css files/FAQ1.css'; // Import FAQ specific CSS
+import React, { useState } from "react";
+import { Search } from 'lucide-react';
+import Navbar from "../component/Navbar";
+import Sidebar from "../component/Sidebar";
+import "../css files/faq.css";
 
-const FAQ1 = () => {
+function FAQ1() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
   return (
-    <div className="faq">
-      <h1>FAQ</h1>
-      {/* FAQ content */}
+    <div className="faq-page">
+      <Navbar toggleSidebar={toggleSidebar} />
+      <div className="content-wrapper">
+        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className="faq-container">
+          <h1>FAQs</h1>
+          <div className="accordion faq-accordion" id="faqAccordion">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingOne">
+                <button
+                  className="accordion-button faq-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  What is your first question?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion"
+              >
+                <div className="accordion-body">
+                  This is the answer to the first question. It will be shown when
+                  the question is clicked.
+                </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingTwo">
+                <button
+                  className="accordion-button faq-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  What is your second question?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion"
+              >
+                <div className="accordion-body">
+                  This is the answer to the second question. It will be shown when
+                  the question is clicked.
+                </div>
+              </div>
+            </div>
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingThree">
+                <button
+                  className="accordion-button faq-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  What is your third question?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                className="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion"
+              >
+                <div className="accordion-body">
+                  This is the answer to the third question. It will be shown when
+                  the question is clicked.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default FAQ1;
