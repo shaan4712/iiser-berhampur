@@ -1,55 +1,56 @@
-require("dotenv").config();
-const express = require("express");
-const connectDB = require("./config/db");
-const User = require("./models/user");
-const bcrypt = require("bcryptjs");
-const cors = require("cors");
-
-const app = express();
-app.use(express.json());
-app.use(cors());
-
-const PORT = process.env.PORT || 5000;
-
-// Connect to MongoDB
-connectDB();
-
 app.post("/api/signup", async (req, res) => {
   const { firstName, lastName, phone, email, password, category } = req.body;
+
+  if (!firstName || !lastName || !phone || !email || !password || !category) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
+
   try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "User already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = new User({
       firstName,
       lastName,
       phone,
       email,
-      password,
+      password: hashedPassword,
       category,
     });
 
-    // Manually trigger validation
-    await newUser.validate();
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-    newUser.password = hashedPassword;
     await newUser.save();
-    res.status(201).json({ message: "User created" });
+    return res.status(201).json({ message: "User created successfully" });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.error(err.message);
+    return res.status(500).json({ error: "Server error" });
   }
 });
 
-// User login
 app.post("/api/login", async (req, res) => {
   const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required" });
+  }
+
   try {
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ error: "Invalid credentials" });
+    if (!user) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ error: "Invalid credentials" });
-    res.status(200).json({ message: "Login successful" });
+    if (!isMatch) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
+
+    return res.status(200).json({ message: "Login successful" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error(err.message);
+    return res.status(500).json({ error: "Server error" });
   }
 });
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

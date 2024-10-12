@@ -1,77 +1,76 @@
+/* Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #43af60;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 5px 5px 40px 1px rgb(152, 152, 152);
-  }
-  
-  .menu-btn {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 30%;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #43af60; /* Green background */
+  color: white; /* White text */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Stay on top of other elements */
+  box-shadow: 5px 5px 40px 1px rgb(152, 152, 152); /* Box shadow for depth */
+}
 
-  .menu-btn:hover{
-    background-color: #e9ecef;
-    color: #1f6632;
-  }
-  
-  .navbar-right {
-    position: relative;
-    transition: 0.3s ease;
-  }
-  
-  .profile-pic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    
-  }
+.menu-btn {
+  font-size: 24px; /* Font size for menu button */
+  background: none; /* No background */
+  border: none; /* No border */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  border-radius: 30%; /* Rounded button */
+}
 
-  .navbar-right:hover {
-    background-color: #5c5c5c;
-    border-radius: 40%;
-  }
-  
-  .profile-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 2000;
-    padding: 10px;
-    width: 40vh;
-  }
-  
-  .profile-dropdown.show {
-    display: block;
-  }
-  
-  .profile-dropdown a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .profile-dropdown a:hover {
-    background-color: #f0f0f0;
-  }
-  
+.menu-btn:hover {
+  background-color: #e9ecef; /* Light grey on hover */
+  color: #1f6632; /* Dark green text on hover */
+}
+
+.navbar-right {
+  position: relative; /* Position for dropdown */
+  transition: 0.3s ease; /* Smooth transition for the dropdown */
+}
+
+.profile-pic {
+  width: 40px; /* Size of the profile picture */
+  height: 40px; /* Size of the profile picture */
+  border-radius: 50%; /* Circular profile picture */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.navbar-right:hover {
+  background-color: #5c5c5c; /* Dark grey background on hover */
+  border-radius: 40%; /* Rounded corners on hover */
+}
+
+.profile-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position dropdown */
+  top: 100%; /* Position below the profile picture */
+  right: 0; /* Align to the right */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+  border-radius: 4px; /* Rounded corners */
+  z-index: 2000; /* Above other elements */
+  padding: 10px; /* Padding for dropdown */
+  width: 40vh; /* Width of the dropdown */
+}
+
+.profile-dropdown.show {
+  display: block; /* Show dropdown when the 'show' class is added */
+}
+
+.profile-dropdown a {
+  display: block; /* Block display for links */
+  padding: 10px; /* Padding for links */
+  text-decoration: none; /* Remove underline from links */
+  color: black; /* Black text for links */
+}
+
+.profile-dropdown a:hover {
+  background-color: #f0f0f0; /* Light grey on hover */
+}

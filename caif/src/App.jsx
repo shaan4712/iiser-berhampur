@@ -13,27 +13,32 @@ import FAQ1 from "./component/FAQ1";
 import PostLogin from "./pages/PostLogin";
 import ViewLab from "./pages/PostLogin";
 import Records from "./component/Records";
+import { AuthProvider } from "./context/AuthContext"; // Import your AuthProvider
 
 function App() {
   return (
-    <Router>
-      <div>
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            {/* <Route path="/faq" element={<FAQ />} /> */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/forgotpwd" element={<ForgotPassword />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/resetpwd" element={<ResetPassword />} />
-            <Route path="/records" element={<Records />} />
-            <Route path="/faq1" element={<FAQ1 />} />
-            <Route path="/viewlab" element={<ViewLab />} />
-          </Routes>
+    <AuthProvider>
+      {" "}
+      {/* Wrap your Router with AuthProvider */}
+      <Router>
+        <div>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              {/* <Route path="/faq" element={<FAQ />} /> */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/forgotpwd" element={<ForgotPassword />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/resetpwd" element={<ResetPassword />} />
+              <Route path="/records" element={<Records />} />
+              <Route path="/faq1" element={<FAQ1 />} />
+              <Route path="/viewlab" element={<ViewLab />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 

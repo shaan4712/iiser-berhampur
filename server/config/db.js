@@ -3,7 +3,9 @@ require("dotenv").config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI);
+    await mongoose.connect(process.env.MONGO_URI, {
+      tlsInsecure: true, // Bypass TLS validation (use for development only)
+    });
     console.log("MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection error:", error);
