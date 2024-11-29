@@ -63,11 +63,11 @@ const Login = () => {
               Log in
             </button>
           </form>
-          <button className="btn btn-forgot btn-outline-light btn-block mb-3">
+          {/* <button className="btn btn-forgot btn-outline-light btn-block mb-3">
             <a href="/forgotpwd" className="text-decoration-none text-black-50">
               Forgot Password
             </a>
-          </button>
+          </button> */}
           <a href="/signup" className="text-decoration-none">
             <button className="btn btn-signup btn-outline-light btn-block">
               Sign up

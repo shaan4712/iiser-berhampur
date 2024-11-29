@@ -5,7 +5,6 @@ import LandingPage from "./component/LandingPage";
 import Footer from "./component/Footer";
 import FAQ from "./pages/FAQ";
 import Login from "./pages/Login";
-import ForgotPassword from "./pages/Forgotpwd";
 import SignUp from "./pages/Signup";
 import ResetPassword from "./pages/Resetpwd";
 import Navbar from "./component/Navbar"; // Import Navbar
@@ -27,7 +26,6 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               {/* <Route path="/faq" element={<FAQ />} /> */}
               <Route path="/login" element={<Login />} />
-              <Route path="/forgotpwd" element={<ForgotPassword />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/resetpwd" element={<ResetPassword />} />
               <Route path="/records" element={<Records />} />

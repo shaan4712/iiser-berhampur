@@ -6,18 +6,22 @@ const bcrypt = require('bcrypt');
 router.post("/signup", async (req, res) => {
     const { firstName, lastName, phone, email, password, category } = req.body;
 
+    // Validate required fields
     if (!firstName || !lastName || !phone || !email || !password || !category) {
-        return res.status(400).json({ error: "All fields are required" });
+        return res.status(400).json({ error: "All fields are required." });
     }
 
     try {
+        // Check if the user already exists
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            return res.status(400).json({ error: "User already exists" });
+            return res.status(400).json({ error: "User already exists. Please login." });
         }
 
+        // Hash the password securely
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        // Create a new user instance
         const newUser = new User({
             firstName,
             lastName,
@@ -27,13 +31,16 @@ router.post("/signup", async (req, res) => {
             category,
         });
 
+        // Save the user to the database
         await newUser.save();
-        return res.status(201).json({ message: "User created successfully" });
+
+        return res.status(201).json({ message: "User created successfully." });
     } catch (err) {
-        console.error(err.message);
-        return res.status(500).json({ error: "Server error" });
+        console.error("Signup Error:", err.message);
+        return res.status(500).json({ error: "An unexpected server error occurred." });
     }
 });
+
 
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
