@@ -3,14 +3,14 @@ import FAQ from "../pages/FAQ";
 import InstrumentsSection from "./InstrumentsSection";
 import LandingNavbar from "./LandingNavbar";
 import Footer from "./Footer";
+import ImageCarousel from "./ImageCarousel";
 
 function LandingPage() {
   return (
     <div>
       <LandingNavbar />
+      <ImageCarousel />
     <div className="container mt-5">
-      <br></br>
-      <br></br><br></br>
       <p>
         The Indian Institute of Science Education and Research Berhampur,
         established in 2016 by the Ministry of Education, Government of India is
