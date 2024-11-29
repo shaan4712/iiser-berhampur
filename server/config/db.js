@@ -1,16 +1,25 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      tlsInsecure: true, // Bypass TLS validation (use for development only)
-    });
-    console.log("MongoDB connected");
-  } catch (error) {
-    console.error("MongoDB connection error:", error);
-    process.exit(1);
-  }
-};
+mongoose.connect(process.env.MONGO_URI, {
+  dbName: 'iiser'
+});
+
+//get the default connection
+//mongoose maintains a default connection
+const connectDB = mongoose.connection;
+
+//Define event listeners
+connectDB.on('connected', () => {
+  console.log('Connected to MongoDB server');
+})
+
+connectDB.on('error', (err) => {
+  console.error('MongoDB connection error');
+})
+
+connectDB.on('disconnected', () => {
+  console.log('MongoDB server disconnected');
+})
 
 module.exports = connectDB;

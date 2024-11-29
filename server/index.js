@@ -1,56 +1,22 @@
-app.post("/api/signup", async (req, res) => {
-  const { firstName, lastName, phone, email, password, category } = req.body;
+const express = require('express');
+const app = express();
+const db = require('./config/db');
+const cors = require('cors');
 
-  if (!firstName || !lastName || !phone || !email || !password || !category) {
-    return res.status(400).json({ error: "All fields are required" });
-  }
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
-  try {
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ error: "User already exists" });
-    }
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+}));
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+app.use(express.json());
 
-    const newUser = new User({
-      firstName,
-      lastName,
-      phone,
-      email,
-      password: hashedPassword,
-      category,
-    });
+const userRoutes = require('./routes/userRoute');
+app.use('/api', userRoutes);
 
-    await newUser.save();
-    return res.status(201).json({ message: "User created successfully" });
-  } catch (err) {
-    console.error(err.message);
-    return res.status(500).json({ error: "Server error" });
-  }
-});
-
-app.post("/api/login", async (req, res) => {
-  const { email, password } = req.body;
-
-  if (!email || !password) {
-    return res.status(400).json({ error: "Email and password are required" });
-  }
-
-  try {
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ error: "Invalid credentials" });
-    }
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ error: "Invalid credentials" });
-    }
-
-    return res.status(200).json({ message: "Login successful" });
-  } catch (err) {
-    console.error(err.message);
-    return res.status(500).json({ error: "Server error" });
-  }
-});
+app.listen(5000, () => {
+  console.log("Listening on port 5000");
+})

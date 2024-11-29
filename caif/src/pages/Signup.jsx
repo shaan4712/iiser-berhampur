@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css files/SignUp.css";
 import LandingNavbar from "../component/LandingNavbar";
+// axios.defaults.withCredentials = true;
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
