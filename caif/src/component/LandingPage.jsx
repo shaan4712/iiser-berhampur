@@ -2,39 +2,33 @@ import React from "react";
 import FAQ from "../pages/FAQ";
 import InstrumentsSection from "./InstrumentsSection";
 import LandingNavbar from "./LandingNavbar";
-import Footer from "./Footer";
 import ImageCarousel from "./ImageCarousel";
+import '../css files/LandingPage.css'
 
 function LandingPage() {
   return (
-    <div>
+    <div className="landing-page">
       <LandingNavbar />
       <ImageCarousel />
-    <div className="container mt-5">
+    <div className="content-container mt-5">
       <p>
-        The Indian Institute of Science Education and Research Berhampur,
-        established in 2016 by the Ministry of Education, Government of India is
-        a Center of Excellence dedicated to teaching and research in basic
-        sciences. As a unique initiative in science education in India, IISER
-        Berhampur aims to be a University of the highest caliber devoted to both
-        high quality teaching and state-of-the-art research in a totally
-        integrated manner, thus nurturing both curiosity and creativity.
+      The Central Analytical Instrumentation Facility (CAIF) at IISER Berhampur represents a significant advancement 
+      in research infrastructure accessibility, serving as a vital hub for scientists, researchers, and academics who require 
+      sophisticated analytical equipment but may not have the means to purchase or maintain such costly instruments independently. 
+      By operating on a rental model, the facility democratizes access to cutting-edge research tools, allowing researchers from 
+      various institutions and even industry partners to conduct their experiments using high-precision instruments under expert guidance. 
+      This approach not only maximizes the utilization of expensive equipment but also creates a collaborative environment where researchers 
+      can share knowledge and expertise while working with these advanced tools.
       </p>
       <p>
-        IISER Berhampur offers 5 years BS-MS and PhD programmes in an
-        intellectually vibrant atmosphere of research. Apart from classroom
-        instruction, IISER builds student skills in areas such as scientific
-        inquiry, problem solving, analytical and communication skills,
-        computational sciences, electronics, instrumentation and workshop
-        practices. IISER plans to develop advanced teaching and research
-        laboratories where students will have the opportunity to perform
-        experiments as well as pursue advanced research under the mentorship of
-        world-class faculty. This would make education and career building in
-        basic sciences more exciting and rewarding. <br />
-        We dedicate ourselves to learn, teach and serve society through
-        excellence in science education and research, in an ecosystem based on
-        integrity, fairness, dignity and professionalism to provide equal
-        opportunities for all.
+      The impact of CAIF extends far beyond mere equipment access, as it plays a crucial role in advancing scientific 
+      research across multiple disciplines, from materials science and chemistry to biological sciences and environmental studies. 
+      The facility's comprehensive range of analytical instruments, coupled with its professional support staff, enables researchers 
+      to obtain precise, reliable data that meets international standards. This has led to enhanced research output quality, accelerated 
+      project timelines, and increased opportunities for breakthrough discoveries. Furthermore, the facility's presence at IISER Berhampur 
+      has strengthened the institution's position as a center of excellence in scientific research, attracting collaborations with other research 
+      institutions and industry partners while providing valuable hands-on experience to students and early-career researchers who might otherwise 
+      not have access to such sophisticated instrumentation.
       </p>
       <InstrumentsSection />
       <section id="faqSection">

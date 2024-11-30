@@ -3,6 +3,10 @@ import '../css files/ImageCarousel.css';
 import iiserBam from '../assets/iiserBam.jpg';
 import research from '../assets/research.jpg';
 import research2 from '../assets/research2.jpg';
+import research3 from '../assets/research3.jpg';
+import research4 from '../assets/research4.jpg';
+import research5 from '../assets/research5.jpg';
+import research6 from '../assets/research6.jpg';
 
 const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,15 +29,39 @@ const ImageCarousel = () => {
       image: research2,
       title: "Academic Excellence",
       description: "Nurturing curiosity and creativity"
+    },
+    {
+      id: 4,
+      image: research3,
+      title: "Academic Excellence",
+      description: "Nurturing curiosity and creativity"
+    },
+    {
+      id: 5,
+      image: research4,
+      title: "Academic Excellence",
+      description: "Nurturing curiosity and creativity"
+    },
+    {
+      id: 6,
+      image: research5,
+      title: "Academic Excellence",
+      description: "Nurturing curiosity and creativity"
+    },
+    {
+      id: 7,
+      image: research6,
+      title: "Academic Excellence",
+      description: "Nurturing curiosity and creativity"
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prevSlide) => 
+      setCurrentSlide((prevSlide) =>
         prevSlide === slides.length - 1 ? 0 : prevSlide + 1
       );
-    }, 4000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
@@ -56,10 +84,6 @@ const ImageCarousel = () => {
               className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
             >
               <img src={slide.image} alt={slide.title} />
-              {/* <div className="carousel-content">
-                <h2>{slide.title}</h2>
-                <p>{slide.description}</p>
-              </div> */}
             </div>
           ))}
         </div>
