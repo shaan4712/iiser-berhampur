@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css files/ImageCarousel.css';
-import iiserBam from '../assets/iiserBam.jpg';
+import iiserBam from '../assets/iiserBam.jpeg';
 import research from '../assets/research.jpg';
 import research2 from '../assets/research2.jpg';
 import research3 from '../assets/research3.jpg';
