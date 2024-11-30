@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 100vw;
   }
   
   .content-wrapper {
@@ -12,7 +13,7 @@
   
   .records-container {
     flex: 1;
-    padding: 120px;
+    padding: 140px;
     background-color: #DFF6E8;
     overflow-y: auto;
   }
@@ -43,7 +44,8 @@
   }
   
   .records-table {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     border-collapse: separate;
     border-spacing: 0 10px;
   }

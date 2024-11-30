@@ -16,8 +16,8 @@ function App() {
       {" "}
       {/* Wrap your Router with AuthProvider */}
       <Router>
-        <div>
-          <div> 
+        <div className="app-container">
+          <div className="content-wrapper"> 
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />

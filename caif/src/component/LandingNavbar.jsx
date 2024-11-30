@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../css files/LandingNavbar.css'
 
 function LandingNavbar() {
   return (
@@ -8,11 +9,18 @@ function LandingNavbar() {
       style={{ backgroundColor: "#9acfa8" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <a className="navbar-brand d-flex align-items-center title" href="/">
           <img
             src="../public/iiser-logo.png"
             alt="Logo"
+            className="logo"
             style={{ height: "40px", marginRight: "20px" }}
+          />
+          <img
+            src="../public/iiser-chakra.png"
+            alt="Logo"
+            className="logo-chakra"
+            style={{ height: "40px", marginRight: "10px", marginLeft: "-10px" }}
           />
           <b>CAIF DEPT - IISER BERHAMPUR</b>
         </a>
