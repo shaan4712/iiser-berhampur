@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-success text-white py-4">
       <div className="container">
-        <div className="row">
+        <div className="row para-container">
           <div className="col-md-4">
             <h5>CAIF Department</h5>
             <p className="mb-0 me-4">

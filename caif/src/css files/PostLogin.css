@@ -11,10 +11,10 @@
 
 .view-lab-container {
   flex-grow: 1;
-  padding: 20px;
+  padding: 85px;
   background-color: #DFF6E8;
-  margin-top: 100px;
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -86,10 +86,12 @@ h1 {
 
 .card-body {
   padding: 15px;
-  background-color: #f8f8f8; /* Light gray background */
+  background-color: #f8f8f8;
+  /* Light gray background */
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* Align items to the right */
+  align-items: flex-end;
+  /* Align items to the right */
 }
 
 .card-title {
@@ -97,16 +99,20 @@ h1 {
   margin-bottom: 5px;
   font-size: 18px;
   font-weight: bold;
-  align-self: flex-start; /* Align title to the left */
-  width: 100%; /* Ensure full width */
+  align-self: flex-start;
+  /* Align title to the left */
+  width: 100%;
+  /* Ensure full width */
 }
 
 .card-text {
   color: #616161;
   margin-bottom: 15px;
   font-size: 14px;
-  align-self: flex-start; /* Align description to the left */
-  width: 100%; /* Ensure full width */
+  align-self: flex-start;
+  /* Align description to the left */
+  width: 100%;
+  /* Ensure full width */
 }
 
 .btn-add {
@@ -123,7 +129,8 @@ h1 {
   letter-spacing: 0.5px;
   width: auto;
   display: inline-block;
-  align-self: flex-end; /* Align button to the right */
+  align-self: flex-end;
+  /* Align button to the right */
 }
 
 .btn-add:hover {

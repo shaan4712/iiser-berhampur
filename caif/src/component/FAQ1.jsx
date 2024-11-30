@@ -39,9 +39,9 @@ function FAQ1() {
 
         .faq-container {
           flex-grow: 1;
-          padding: 20px;
+          padding: 100px;
           background-color: #DFF6E8;
-          margin-top: 110px;
+          margin-top: 50px;
         }
 
         h1 {
