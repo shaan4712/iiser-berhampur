@@ -5,18 +5,36 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const login = (email, password) => {
-    // Logic to handle login (you might want to call an API here)
-    setUser({ email });
-    localStorage.setItem("user", JSON.stringify({ email }));
-    // Redirect to the /viewlab page
-    window.location.href = "/viewlab";
+  const login = async (email, password) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Login failed');
+      }
+
+      // Store the complete user object
+      const userData = data.user;
+      setUser(userData);
+      localStorage.setItem("user", JSON.stringify(userData));
+      window.location.href = "/viewlab";
+    } catch (error) {
+      console.error('Login error:', error);
+      alert(error.message);
+    }
   };
 
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
-    // Redirect to the home page
     window.location.href = "/";
   };
 
@@ -27,13 +45,12 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook for accessing auth context
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
     throw new Error("useAuth must be used within an AuthProvider");
   }
-  return context; // Return the context directly
+  return context;
 };
 
 export default AuthContext;

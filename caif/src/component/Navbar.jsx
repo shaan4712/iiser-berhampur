@@ -26,7 +26,7 @@ const Navbar = () => {
         />
         <div className="profile-dropdown">
           <Link to="/profile-settings">Profile Settings</Link>
-          <Link to="/help">Help</Link>
+          <Link to="/faq1">Help</Link>
           <Link
             to="/"
             onClick={() => {

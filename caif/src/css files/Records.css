@@ -75,3 +75,64 @@
     background-color: white;
     box-shadow: 0
   }
+
+  .btn-delete {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-delete:hover {
+    background-color: #cc0000;
+  }
+  
+  .records-table td {
+    vertical-align: middle;
+  }
+
+  /* For tablets */
+@media screen and (max-width: 1024px) {
+  .records-container {
+      padding: 140px 40px;
+  }
+
+  .records-table {
+      width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .records-container {
+      padding: 80px 5px;
+      margin-top: 60px;
+      overflow-x: auto;
+  }
+
+  .records-table {
+      width: 100%;
+      margin: 0;
+      font-size: 14px;
+  }
+
+  .records-table th,
+  .records-table td {
+      padding: 8px;
+      white-space: nowrap;
+  }
+
+  .search-container {
+      margin: 10px 5px;
+  }
+
+  .search-bar {
+      width: 95%;
+      margin: 0 auto;
+  }
+}

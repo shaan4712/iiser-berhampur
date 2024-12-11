@@ -1,35 +1,47 @@
-import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Search, Trash2 } from 'lucide-react'; // Import Trash2 icon
+import axios from 'axios';
 import Navbar from "../component/Navbar";
 import Sidebar from "../component/Sidebar";
-import '../css files/Records.css'; // Make sure this path is correct
+import '../css files/Records.css';
 
 const Records = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [records, setRecords] = useState([
-    {
-      instrumentName: "Spectrometer",
-      purpose: "Analyze light spectra",
-      fromDate: "2024-09-15",
-      toDate: "2024-09-20",
-      fuelLeft: "50",
-    },
-    {
-      instrumentName: "Microscope",
-      purpose: "Cell structure study",
-      fromDate: "2024-09-16",
-      toDate: "2024-09-18",
-      fuelLeft: "75",
-    },
-    {
-      instrumentName: "Centrifuge",
-      purpose: "Sample separation",
-      fromDate: "2024-09-17",
-      toDate: "2024-09-19",
-      fuelLeft: "60",
-    },
-  ]);
+  const [records, setRecords] = useState([]);
+
+  const fetchRecords = async () => {
+    try {
+      const storedUser = JSON.parse(localStorage.getItem('user'));
+      if (!storedUser || !storedUser._id) {
+        console.log('No user found');
+        return;
+      }
+
+      const response = await axios.get(`http://localhost:5000/api/records/${storedUser._id}`);
+      setRecords(response.data);
+    } catch (error) {
+      console.error('Error fetching records:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchRecords();
+  }, []);
+
+  const handleDelete = async (recordId) => {
+    if (window.confirm('Are you sure you want to delete this record?')) {
+      try {
+        await axios.delete(`http://localhost:5000/api/records/delete/${recordId}`);
+        // Refresh records after deletion
+        fetchRecords();
+        alert('Record deleted successfully');
+      } catch (error) {
+        console.error('Error deleting record:', error);
+        alert('Failed to delete record');
+      }
+    }
+  };
 
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
@@ -64,18 +76,27 @@ const Records = () => {
                 <th>Purpose</th>
                 <th>From Date</th>
                 <th>To Date</th>
-                <th>Fuel left</th>
+                <th>Fuel Required</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {filteredRecords.map((record, index) => (
-                <tr key={index}>
+                <tr key={record._id}>
                   <td>{index + 1}</td>
                   <td>{record.instrumentName}</td>
                   <td>{record.purpose}</td>
-                  <td>{record.fromDate}</td>
-                  <td>{record.toDate}</td>
-                  <td>{record.fuelLeft}</td>
+                  <td>{new Date(record.fromDate).toLocaleDateString()}</td>
+                  <td>{new Date(record.toDate).toLocaleDateString()}</td>
+                  <td>{record.fuelRequired}</td>
+                  <td>
+                    <button 
+                      className="btn-delete"
+                      onClick={() => handleDelete(record._id)}
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

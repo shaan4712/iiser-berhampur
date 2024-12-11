@@ -12,15 +12,17 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(""); // Clear previous error
+    setError("");
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/login`, {
+      const response = await axios.post(`http://localhost:5000/api/users/login`, {
         email,
         password,
       });
 
-      console.log(response.data.message); // Optionally log success message
+      // Store user data in localStorage
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+      console.log(response.data.message);
       navigate("/viewlab");
     } catch (error) {
       console.error("Login failed", error);
@@ -28,7 +30,7 @@ const Login = () => {
         error.response?.data?.error || "Login failed. Please try again."
       );
     }
-  };
+};
 
   return (
     <div>

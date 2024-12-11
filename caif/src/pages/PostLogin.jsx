@@ -4,8 +4,12 @@ import Sidebar from "../component/Sidebar";
 import Navbar from "../component/Navbar";
 import instruments from "../data/instrumentData"; // Make sure this path is correct
 import "../css files/PostLogin.css"; // Make sure this path is correct
+import { useAuth } from "../context/AuthContext";
+import axios from "axios";
 
 const ViewLab = () => {
+  const { user } = useAuth();
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [showDialog, setShowDialog] = useState(false);
@@ -28,18 +32,40 @@ const ViewLab = () => {
     setShowDialog(true);
   };
 
-  const handleDialogSubmit = (e) => {
+  const handleDialogSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically add the record to your state or send it to a backend
-    console.log("New record:", { ...newRecord, instrumentName: selectedInstrument.name });
-    setShowDialog(false);
-    setNewRecord({
-      purpose: "",
-      fromDate: "",
-      toDate: "",
-      fuelRequired: "",
-    });
-  };
+    
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    
+    if (!storedUser || !storedUser._id) {
+        console.log('No user found in localStorage');
+        return;
+    }
+
+    try {
+        const response = await axios.post('http://localhost:5000/api/records', {
+            userId: storedUser._id,
+            instrumentName: selectedInstrument.name,
+            purpose: newRecord.purpose,
+            fromDate: newRecord.fromDate,
+            toDate: newRecord.toDate,
+            fuelRequired: newRecord.fuelRequired
+        });
+
+        setShowDialog(false);
+        setNewRecord({
+            purpose: "",
+            fromDate: "",
+            toDate: "",
+            fuelRequired: "",
+        });
+        alert('Record added successfully!');
+    } catch (error) {
+        console.error('Error:', error);
+        alert(error.response?.data?.error || 'Failed to create record');
+    }
+};
+
 
   return (
     <div className="view-lab-page">

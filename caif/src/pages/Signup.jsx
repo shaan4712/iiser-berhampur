@@ -30,7 +30,7 @@ const SignUp = () => {
     setError("");
 
     try {
-      await axios.post(`http://localhost:5000/api/signup`, formData);
+      await axios.post(`http://localhost:5000/api/users/signup`, formData);
 
       // Reset form data after successful submission
       setFormData({
