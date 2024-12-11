@@ -7,7 +7,7 @@ A web application developed for IISER Berhampur's Central Advanced Instrumentati
 The CAIF Instrument Booking System streamlines the process of renting sophisticated laboratory equipment. Built with the MERN stack, it provides a user-friendly interface for browsing available instruments, managing reservations, and handling user authentication.
 
 ## Live link
-[CAIF-IISER]()
+[CAIF-IISER](https://iiser-berhampur.vercel.app/)
 
 ![image](https://github.com/user-attachments/assets/4be08480-d14d-46e4-8133-2ce9e89c3608)
 
