@@ -11,13 +11,13 @@ function LandingNavbar() {
       <div className="container-fluid">
         <a className="navbar-brand d-flex align-items-center title" href="/">
           <img
-            src="../public/iiser-logo.png"
+            src="../iiser-logo.png"
             alt="Logo"
             className="logo"
             style={{ height: "40px", marginRight: "20px" }}
           />
           <img
-            src="../public/iiser-chakra.png"
+            src="../iiser-chakra.png"
             alt="Logo"
             className="logo-chakra"
             style={{ height: "40px", marginRight: "10px", marginLeft: "-10px" }}

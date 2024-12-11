@@ -43,7 +43,7 @@ const ViewLab = () => {
     }
 
     try {
-        const response = await axios.post('http://localhost:5000/api/records', {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/records`, {
             userId: storedUser._id,
             instrumentName: selectedInstrument.name,
             purpose: newRecord.purpose,

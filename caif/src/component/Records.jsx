@@ -18,7 +18,7 @@ const Records = () => {
         return;
       }
 
-      const response = await axios.get(`http://localhost:5000/api/records/${storedUser._id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/records/${storedUser._id}`);
       setRecords(response.data);
     } catch (error) {
       console.error('Error fetching records:', error);
@@ -32,7 +32,7 @@ const Records = () => {
   const handleDelete = async (recordId) => {
     if (window.confirm('Are you sure you want to delete this record?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/records/delete/${recordId}`);
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/records/delete/${recordId}`);
         // Refresh records after deletion
         fetchRecords();
         alert('Record deleted successfully');
