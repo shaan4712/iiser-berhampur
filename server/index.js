@@ -15,6 +15,11 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Basic test route
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 // Routes
 const userRoutes = require('./routes/userRoute');
 const recordRoutes = require('./routes/recordRoute');
