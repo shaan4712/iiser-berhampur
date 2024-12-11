@@ -76,10 +76,14 @@ The CAIF Instrument Booking System streamlines the process of renting sophistica
 7. The client side run on http://localhost:5173/ (by default) and the server on http://localhost:5000/ 
 
 ### Environment Variables
+Create a `.env` file in the frontend directory:
+```env
+VITE_API_URL=your-server-link
+```
+
 Create a `.env` file in the backend directory:
 ```env
 MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
 PORT=5000
 ```
 
@@ -89,7 +93,7 @@ PORT=5000
 - Username
 - Email
 - Password (hashed)
-- Role (Admin/User)
+- Category (Corporate/Institute/Personal)
 
 ### Instrument Schema
 - Name
@@ -103,7 +107,7 @@ PORT=5000
 - Instrument ID
 - Start Date
 - End Date
-- Status
+- Fuel
 
 ## Contact 📧
 
