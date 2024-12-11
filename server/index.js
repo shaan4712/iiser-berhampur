@@ -5,7 +5,7 @@ const cors = require('cors');
 
 // Move CORS before other middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://iiser-berhampur-git-main-a-shantanus-projects.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://iiser-berhampur.vercel.app/'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
