@@ -126,6 +126,7 @@ const ViewLab = () => {
                     type="date"
                     placeholder="From Date"
                     value={newRecord.fromDate}
+                    min={new Date().toISOString().split('T')[0]}
                     onChange={(e) =>
                       setNewRecord({ ...newRecord, fromDate: e.target.value })
                     }
@@ -135,6 +136,7 @@ const ViewLab = () => {
                     type="date"
                     placeholder="To Date"
                     value={newRecord.toDate}
+                    min={newRecord.fromDate || new Date().toISOString().split('T')[0]}
                     onChange={(e) =>
                       setNewRecord({ ...newRecord, toDate: e.target.value })
                     }
