@@ -7,6 +7,7 @@ const cors = require('cors');
 app.use(cors({
   origin: ['http://localhost:5173', 'https://iiser-berhampur.vercel.app/'],
   credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
