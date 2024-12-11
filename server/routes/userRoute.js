@@ -4,7 +4,14 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 
 router.post("/signup", async (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://iiser-berhampur.vercel.app');
+    
+    // Dynamic header based on origin
+    const origin = req.get('origin');
+    if (origin === 'https://iiser-berhampur.vercel.app') {
+        res.header('Access-Control-Allow-Origin', 'https://iiser-berhampur.vercel.app');
+    } else {
+        res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    }
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
@@ -41,7 +48,13 @@ router.post("/signup", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-    res.header('Access-Control-Allow-Origin', 'https://iiser-berhampur.vercel.app');
+
+    const origin = req.get('origin');
+    if (origin === 'https://iiser-berhampur.vercel.app') {
+        res.header('Access-Control-Allow-Origin', 'https://iiser-berhampur.vercel.app');
+    } else {
+        res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    }
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
