@@ -22,7 +22,7 @@ function Footer() {
           </div>
           <div className="col-md-4">
             <h5>Address</h5> 
-            <p>Govt. ITI Building Engg. School, Junction, Gajapati Nagar, Brahmapur, Odisha 760010</p>
+            <p>IISER Berhampur, At/Po: - Laudigam, Konisi, Police Station - Golanthara, Dist. - Ganjam, Odisha, India-760003</p>
             <a href="https://www.justdial.com/Berhampur-Odisha/Iiser-Berhampur-Transit-Campus-Berhampur/9999PX680-X680-180814222829-Q2Y3_BZDET" 
             className="text-decoration-none custom"><p>+91 68022 27705</p></a>
             <div>
